@@ -1,0 +1,158 @@
+@import "color";
+
+// -------------------------- START : COVER - HEADER --------------------------
+.logo{
+	width: 113px;
+	height: 40px;
+	object-fit: contain;
+}
+
+header{
+	
+	width: 100%;
+	background-color: #232323;
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	.main-menu{
+		.btn-menu{
+			text-transform: uppercase;
+		}
+	}
+	.btn-menu
+	{
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		color: #ffffff;
+		background-color: #d70000;
+		box-shadow: 5px 5px 15px 0 #000000;
+	}
+	.navbar-collapse ul li{	
+		padding-right: 50px;
+		.nav-link{
+			color: $color-nav !important;
+			font-weight: bold;
+			font-size: 16px;
+		}
+	}
+	.fix-height{
+		height: 40px;
+		font-weight: 400;
+	}
+	.xspera-logo{
+		// max-height: 100%;
+		height: 40px;
+	}
+	.btn-border-under{
+		position: relative;
+		z-index: 1;
+	}
+}	
+
+
+#header{
+	background-color: #242424;
+	height: 100vh;
+	position: relative;
+    padding-top: 125px;
+	.col-left{
+  		position: relative;
+	}
+
+	.cover-left{
+	    position: absolute;
+	    top: 90px;
+	}
+
+	.item-all{
+	  font-size: 42px;
+	  opacity: 0.5;
+	  line-height: 1.52;
+	  letter-spacing: 1.7px;
+	  color: $color-p-nav;
+	  font-weight: 200;
+	  margin-bottom: 0;
+      margin-top: 13px;
+	}
+
+	.item-smart{
+	  font-size: 72px;
+	  font-weight: 900;
+	  color: $color-p-nav;
+	  font-weight: 900;
+	  margin-bottom: 0;
+	}
+
+	.item-in{
+	  font-size: 24px;
+	  font-stretch: normal;
+	  line-height: 1.63;
+	  color: #c3242b;
+	  font-weight: 400;
+	  margin-bottom: 0;
+      margin-top: 7px;
+	}
+	.img-responsive{
+		max-width: 100%;
+	}
+}
+
+// -------------------------- END : COVER - HEADER --------------------------
+
+.item{
+	width: 165px;
+	height: 220px;
+	text-align: center;
+}
+
+.item p{
+	color: $color-nav;
+	margin-top: 30px;
+	font-size: 18px;
+}
+
+.btn-menu{
+	border-color: $color-button;
+}
+
+
+.xspera-left{
+	margin-right: 150px;
+}
+
+.right-img{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.btnWhite{
+	.red{
+	color: #d70000;
+	}
+}
+
+.btn-menu{
+	color: #ffffff;
+    background-color: #d70000;
+    display: block;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.btn-menu:before {
+    content: '';
+    border: 1px solid #ddd;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 6px;
+    left: -6px;
+}

@@ -1,0 +1,141 @@
+html{
+    font-family: Roboto;
+}
+
+*, h3, p{
+    padding: 0;
+    margin: 0;
+}
+.left-side-menu{
+    width: 260px;
+    height: 860px;
+    background-image: linear-gradient(121deg, #00a1e4, #005d98);
+}
+.top-logo{
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-wrapper{
+    background-image: linear-gradient(121deg, #00a1e4, #005d98);
+}
+.menu-wrapper ul li{
+    list-style: none;
+    padding: 17px 0;
+    height: 50px;
+    box-shadow: inset 0 -0.5px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+.menu-wrapper ul li a{
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    display: block;
+}
+.menu-wrapper ul li a:hover{
+    text-decoration: none;
+}
+
+.menu-wrapper ul li:hover{
+    border-right: 6px solid #f9890c;
+    transition: 0.3s all ease;
+}
+
+.menu-wrapper ul li a i{
+    padding: 0 18px 0 16px;
+}
+#message {
+    background-image: linear-gradient(80deg, #9000ff, #005cec, #005bec);
+    padding-left: 30px;
+    height: auto;   
+    line-height: 0;
+}
+
+#message a span{
+    font-size: 12px;
+}
+
+.logo-login h3{
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.logo-login p {
+    font-size: 12px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.logo-login img{
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+.img-info{
+    margin: 17px 0 60px 0;
+}
+
+.l-main {
+    width: 1180px;
+}
+
+.card-account{
+      opacity: 0.95;
+  border-radius: 5px;
+  box-shadow: 0 6px 10px 0 rgba(169, 71, 0, 0.25);
+  background-image: linear-gradient(65deg, #f98153, #f45112);
+}
+.card-account h3{
+    font-size: 12px;
+}
+
+.img-card h3{
+    color: #ffffff;
+}
+.col-l{
+    width: 353px;
+}
+
+.main-left{
+    padding: 40px 0 19px 40px;
+    height: fit-content;
+    flex-flow: row wrap;
+    flex: 1;
+}
+
+.card-account{
+    padding: 15px 18px 14px 20px;
+}
+.mr-20{
+    margin-right: 20px;
+}
+.firgure-vn{
+    color: #ffffff;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.firgure-vn strong{
+    font-size: 28px;
+}
+
+.firgure-vn sup.firgure{
+    font-size: 18px;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    background: none;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    opacity: 0.5;
+    box-shadow: inset 0 0 2px #ffffff;
+
+}
+::-webkit-scrollbar-track {
+    background-color:#005d98;
+    border-radius: 2px;
+}

@@ -1,0 +1,32 @@
+.bg-main{
+	background-color: $color-p-nav;
+}
+aside, section{
+  	.h_offer{
+  		font-size: 36px;
+  		font-weight: bold;
+  		color: #ffffff;
+  		text-align: center;
+      margin-bottom: 0;
+  	}
+  	.draw-border{
+  	width: 123px;
+  	height: 3px;
+		background:#c3242b;
+    margin: 13px auto 0 auto;
+  	}
+}
+
+
+.bg-offer{
+  margin-top: 110px; 
+  font-weight: 400;
+}
+.show{
+  display: block;
+  width: 100%;
+}
+.hide{
+  display: none;
+  width: 100%;
+}
