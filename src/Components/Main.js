@@ -3,8 +3,7 @@ import styled from 'styled-components';
 //Data
 import { cardWater } from '../data/dataCard';
 //Image
-import img_banner from '../image/banner.png';
-import ic_plus from '../image/ic_plus.png';
+import banner from '../image/banner.png';
 
 //Component
 import CardAccount from './CardAccount';
@@ -12,8 +11,13 @@ import CardHelp from './CardHelp';
 import Table from './Table';
 import Bottom from './Bottom';
 import Scroll from './Scroll';
+import NavMenu from './NavMenu';
 
 const BounceStyle = styled.div `
+    .nav {
+        background-image: linear-gradient(121deg, #00a1e4, #005d98);
+        
+    }
     h2{
         padding: 0;
         margin: 0;
@@ -26,14 +30,17 @@ const BounceStyle = styled.div `
         .main-left{
             user-select: none;
             .image {
-                width: 726px;
-                height: 170px;
-                margin-top: 20px;
-                border-radius: 5px;
-                background-image:url(${img_banner});
+                img{
+                    width: 726px;
+                    height: 170px;
+                    margin-top: 20px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+                ${'' /* background-image:url(${img_banner});
                 background-repeat:no-repeat;
                 background-size:100% 100%;
-                background-position:center;
+                background-position:center; */}
             }
             .scroll {
                 width: 726px;
@@ -164,17 +171,14 @@ class Main extends Component {
     render() {
         return (
             <BounceStyle className="l-main">
-                <div className='nav'>
-                    <div className='nav-left'>
-                        <i className="fa fa-home"></i>
-                        <span>Home</span>
-                    </div>
-                </div>
+                <NavMenu service = 'Customer Survey'/>
                 <div className = 'main-cover'>
                     <div className='main-top'>
                         <div className='main-left d-flex'>
                             <CardAccount />
-                            <div className = 'image'></div>
+                            <div className = 'image'>
+                                <img src = {banner} alt = 'banner' />
+                            </div>
                             {/* Scroll */}
                             <div className = 'scroll' onWheel = {this.onWheelHandler.bind(this)}>
                                 <Scroll/>

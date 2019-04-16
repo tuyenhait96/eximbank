@@ -41,5 +41,21 @@ const dataInfo = [
         icon: image06,
         name: 'Thái Dương'
     },
+    {
+        icon: image01,
+        name: 'Thuỳ Dương'
+    },
+    {
+        icon: image02,
+        name: 'Sir Alex'
+    },
+    {
+        icon: image03,
+        name: 'Phương Ly'
+    },
+    {
+        icon: image04,
+        name: 'Tuấn Anh'
+    }
 ]
 export default dataInfo

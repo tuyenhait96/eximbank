@@ -30,6 +30,10 @@ const BounceStyle = styled.div`
             color: #001654;
         }
     }
+    .img-reponsive{
+        width: 100%;
+        height: 100%;
+    }
 `
 
 class GroupInfo extends Component {
@@ -37,7 +41,7 @@ class GroupInfo extends Component {
         return this.props.data.map((item, i) => {
             return (<div className = 'group-info' key = {i}>
                 <div className = 'image-info'>
-                    <img src= {item.icon} alt =''/>
+                    <img src= {item.icon} alt ='' className= 'img-reponsive'/>
                 </div>
                 <p>{item.name}</p></div>
             )

@@ -28,6 +28,10 @@ code {
   src: url('./font/Roboto-Light.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'RobotoRegular';
+  src: url('./font/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
   font-family: 'RobotoLightItalic';
   src: url('./font/Roboto-LightItalic.ttf') format('truetype');
 }
