@@ -14,7 +14,6 @@ class CardAccount extends Component {
         }
     }
     renderData() {
-        console.log(this.state.data)
         return this.state.data.map((item, i) => (
             <div className="col-l card-account mr-20" data = {item} key = {i}>
                 <div className='img-card d-flex justify-content-between'>

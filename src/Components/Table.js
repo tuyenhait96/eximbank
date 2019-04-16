@@ -4,20 +4,12 @@ import { tableData } from '../data/dataCard';
 
 const TableStyled = styled.div`
     padding: 0 40px;
-    .l-tbody{
-        padding: 0 40px;
-        background-image: linear-gradient(121deg, #00a1e4, #005d98);
-        &:first-child{
-                            border-bottom-left-radius: 10px;
-                        }
-                        &:last-child{
-                            border-bottom-right-radius: 10px;
-                        }
-    }
     .align-right{
         text-align: right;
+        font-weight: bold;
     }
     table{
+        user-select: none;
         padding: 0;
         margin: 0;
         border-radius: 5px;
@@ -27,7 +19,7 @@ const TableStyled = styled.div`
             background-color: #1aa4e5;
             tr {
                 th{
-                    font-family: Roboto;
+                    font-family: RobotoMedium;
                     font-size: 12px;
                     font-weight: 500;
                     color: #ffffff;
@@ -58,13 +50,17 @@ const TableStyled = styled.div`
             line-height: 2.89;
             color: #ffffff;
             padding: 0;
-            
+            font-family: RobotoLight; 
         }
         
         tbody{
             height: 240px;
             overflow-y: scroll;
             display: block;
+            padding: 0 40px;
+            background-image: linear-gradient(121deg, #00a1e4, #005d98);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             tr{
                 &:last-child{
                     td{
@@ -99,7 +95,6 @@ class Table extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <div className = 'l-tbody'>
                         {
                             this.state.data.map((item, i) =>
                                 <tr key = {i} className = 'table-body'>
@@ -112,7 +107,6 @@ class Table extends Component {
                                 </tr>
                             )
                         }
-                        </div>
                     </tbody>
                 </table>
             </TableStyled>

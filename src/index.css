@@ -12,3 +12,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* ------ FONT ------ */
+/* - UTM-Avo */
+@font-face{
+  font-family: 'UTMAvoRegular';
+  src: url('./font/UTM-Avo.ttf')format('truetype');
+}
+/* - Roboto */
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('./font/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'RobotoLight';
+  src: url('./font/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'RobotoLightItalic';
+  src: url('./font/Roboto-LightItalic.ttf') format('truetype');
+}
+/* - Lato */
+@font-face {
+  font-family: 'LatoBold';
+  src: url('./font/Lato-Bold.ttf') format('truetype');
+}

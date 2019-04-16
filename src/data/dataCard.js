@@ -1,3 +1,5 @@
+
+
 const dataCard = [
     {
         title: 'CURRENT ACCOUNT',
@@ -129,3 +131,4 @@ export const tableData = [
         balance: '1,299,000'
     },
 ]
+

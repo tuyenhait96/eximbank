@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import CardAccount from './CardAccount';
 import styled from 'styled-components';
+//Data
 import { cardWater } from '../data/dataCard';
-import banner from '../banner.png';
+//Image
+import img_banner from '../image/banner.png';
+import ic_plus from '../image/ic_plus.png';
+
+//Component
+import CardAccount from './CardAccount';
 import CardHelp from './CardHelp';
 import Table from './Table';
 import Bottom from './Bottom';
+import Scroll from './Scroll';
 
 const BounceStyle = styled.div `
     h2{
@@ -18,11 +24,29 @@ const BounceStyle = styled.div `
             display: flex;
         }
         .main-left{
+            user-select: none;
             .image {
-                padding-top: 20px;
-                img{
-                    width: 726px;
-                    height: 170px;
+                width: 726px;
+                height: 170px;
+                margin-top: 20px;
+                border-radius: 5px;
+                background-image:url(${img_banner});
+                background-repeat:no-repeat;
+                background-size:100% 100%;
+                background-position:center;
+            }
+            .scroll {
+                width: 726px;
+                overflow: hidden;
+                margin:20px 21px 0 0;
+                .group-plus {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                    line-height: 90px;
+                    text-align: center;
+                    margin-right: 20px;
                 }
             }
         }
@@ -30,33 +54,33 @@ const BounceStyle = styled.div `
             flex: 1;
             height: auto;
             padding: 40px 40px 21px 0;
+            user-select: none;
             .card-water{
-
                 border-radius: 5px;
                 background-image: linear-gradient(64deg, #00cfff, #005cec, #005bec);     
                 padding: 15px 0 15px 25px;
                 h3{
                     text-transform: uppercase;
-                    font-family: Roboto;
+                    font-family: RobotoMedium;
                     font-size: 12px;
                     font-weight: 500;
                     color: #ffffff;
                 }
                 .date { 
-                    font-family: Roboto;
+                    font-family: RobotoLight;
                     font-size: 16px;
                     font-weight: 300;
                     color: #ffffff;
                     padding-top:43px;
                 }
                 .money {
-                    font-family: Lato;
+                    font-family: LatoBold;
                     font-size: 28px;
                     font-weight: bold;
                     color: #ffffff;
                 }
                 .type{
-                    font-family: Roboto;
+                    font-family: RobotoLightItalic;
                     font-size: 16px;
                     font-weight: 300;
                     font-style: italic;
@@ -70,14 +94,14 @@ const BounceStyle = styled.div `
                 border-radius: 5px;
                 background-image: linear-gradient(to top, #000f2f, #00385c);
                 h2{
-                    font-family: Roboto;
+                    font-family: RobotoMedium;
                     font-size: 28px;
                     font-weight: 500;
                     color: #ffffff;  
                 }
                 .help{
                     padding-top: 8px;
-                    font-family: Roboto;
+                    font-family: RobotoLight;
                     font-size: 28px;
                     font-weight: 300;
                     color: #ffffff;
@@ -91,8 +115,6 @@ const BounceStyle = styled.div `
                     text-indent: 28px;
                     outline: none;
                     border: 0;
-                    &:focus{
-                    }
                 }
                 input::placeholder {
                     opacity: 0.5;
@@ -100,6 +122,7 @@ const BounceStyle = styled.div `
                     font-size: 18px;
                     font-weight: 300;
                     color: #ffffff;
+                        font-family: RobotoLight;
                 }   
                 input[placeholder]{
                     color: #ffffff !important;
@@ -115,6 +138,7 @@ class Main extends Component {
         super(props);
         this.state = {
             data: cardWater
+            
         }
     }
     renderCardData() {
@@ -129,6 +153,14 @@ class Main extends Component {
             )
         })
     }
+    onWheelHandler(e){
+        console.log('onWheel')
+        if(e.deltaY > 0) {
+            e.currentTarget.scrollLeft +=30 
+        }else{
+            e.currentTarget.scrollLeft -=30
+        }
+    }
     render() {
         return (
             <BounceStyle className="l-main">
@@ -142,8 +174,10 @@ class Main extends Component {
                     <div className='main-top'>
                         <div className='main-left d-flex'>
                             <CardAccount />
-                            <div className = 'image'>
-                                <img src = {banner} alt = 'banner'/>
+                            <div className = 'image'></div>
+                            {/* Scroll */}
+                            <div className = 'scroll' onWheel = {this.onWheelHandler.bind(this)}>
+                                <Scroll/>
                             </div>
                         </div>
                         <div className='main-right'>

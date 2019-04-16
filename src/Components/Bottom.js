@@ -4,12 +4,12 @@ import styled from 'styled-components';
 const BounceStyle = styled.div`
     display: flex;
     padding: 30px 40px 19px 40px;
+    user-select:none;
     .address, .contact, .center, .right{
         flex: 1;
     }
     .address, .center, .right{
         opacity: 0.8;
-        font-family: Roboto;
         color: #ffffff;
         height: fit-content;
         line-height: 40px;
@@ -18,6 +18,12 @@ const BounceStyle = styled.div`
             font-size: 12px;
             font-weight: 500;
             line-height: 1.67;
+        }
+        h1, .phone{
+            font-family: RobotoMedium;
+        }
+        .mail, p{
+            font-family: RobotoLight;
         }
         p, .phone, .copy{
             font-size: 12px;
@@ -29,6 +35,7 @@ const BounceStyle = styled.div`
         display: flex;
         .right{
             text-align: right;
+            font-family: RobotoLight;
         }
     }
 `

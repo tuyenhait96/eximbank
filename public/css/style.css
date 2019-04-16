@@ -93,6 +93,7 @@ html{
 
 .img-card h3{
     color: #ffffff;
+    font-family: RobotoMedium;
 }
 .col-l{
     width: 353px;
@@ -113,6 +114,7 @@ html{
 }
 .firgure-vn{
     color: #ffffff;
+    font-family: LatoBold;
 }
 .mt-20{
     margin-top: 20px;
