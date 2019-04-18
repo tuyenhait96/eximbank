@@ -20,15 +20,9 @@ const BounceStyled = styled.div`
 `
 
 class Scroll extends Component {
-    // renderData() {
-    //     return dataInfo.map((item, i) => {
-    //         return <GroupInfo data = {item} icon = {item.icon}/>
-    //     })
-    // }
     render() {
             return (
                 <BounceStyled>
-                    {/* {this.renderData()} */}
                     <GroupInfo data = {dataInfo}/>
                 </BounceStyled>
             );

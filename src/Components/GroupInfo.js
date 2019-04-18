@@ -51,7 +51,7 @@ class GroupInfo extends Component {
     render() {
         return (
             <BounceStyle>
-                <div className = 'group-plus' onWheel = {()=>this.onWheelHandler()}>
+                <div className = 'group-plus'>
                     <img src = {ic_plus} alt='plus'/>
                 </div>
                 {this.renderData()}

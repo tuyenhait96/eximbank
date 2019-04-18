@@ -61,6 +61,8 @@ const TableStyled = styled.div`
             background-image: linear-gradient(121deg, #00a1e4, #005d98);
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.5) #005d98;
             tr{
                 &:last-child{
                     td{

@@ -4,12 +4,20 @@ import styled from 'styled-components';
 const BounceStyled = styled.div`
     .nav-left {
         flex: 1;
+        display: flex;
         .bg-active{
             display: flex;
             align-items: center;
-            width: 225px;
+            width: 195px;
             height: 60px;
             background: rgba(255, 255, 255, 0.35);
+        }
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid rgba(255,255,255,0.35);
         }
         i{
             color: #ffffff; 
@@ -105,8 +113,9 @@ class NavMenu extends Component {
                 <div className='nav-left'>
                     <div className = 'bg-active'>
                         <i className="fa fa-home"></i>
-                        <span>Home</span>
+                        <span>{this.props.title}</span>
                     </div>
+                    <div className = 'arrow-right'></div>
                 </div>
                 <div className = 'nav-right'>
                     <div className = 'service'>

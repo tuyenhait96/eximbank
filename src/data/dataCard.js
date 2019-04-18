@@ -15,13 +15,43 @@ const dataCard = [
 export default dataCard
 
 export const menuNav = [
-    'Home',
-    'Money Transfer',
-    'Payment',
-    'Products Services',
-    'Chat'
-];
+    {
+        'title': 'Home',
+        key: 'home'
 
+    },
+    {
+        'title': 'Money Transfer',
+        key: 'monney'
+    },
+    {},
+    {
+        title: 'Payment',
+        key: 'payment'
+    },
+    {
+        title: 'Products Services',
+        key: 'product'
+    },
+    {
+        title: 'Chat',
+        key: 'chat'
+    },
+];
+export const menuNavT = [
+    {
+        title: 'Payment',
+        key: 'payment'
+    },
+    {
+        title: 'Products Services',
+        key: 'product'
+    },
+    {
+        title: 'Chat',
+        key: 'chat'
+    },
+];
 export const cardWater = [
     {
         title : 'NEXT Recurring Bill Payment',
@@ -129,6 +159,74 @@ export const tableData = [
         deposit: '',
         withdrawal: '299,000',
         balance: '1,299,000'
+    },{
+        date: '30 Sep 2018',
+        type: 'Topup',
+        detail: 'Phone number: 0987654321',
+        deposit: '',
+        withdrawal: '200,000',
+        balance: '12,864,000'
+    },{
+        date: '27 Sep 2018',
+        type: 'Money Transfer',
+        detail: 'Account  200014849357805',
+        withdrawal: '168,000',
+        balance: '12,696,000'
+    },{
+        date: '25 Sep 2018',
+        type: 'POS',
+        detail: 'Parkson CT Plaza 1294',
+        deposit: '',
+        withdrawal: '499,000',
+        balance: '12,197,000'
+    },{
+        date: '10 Sep 2018',
+        type: 'Cash Deposit',
+        detail: 'CN Tan Son Nhat',
+        deposit:'10,000,000',
+        withdrawal: '',
+        balance: '11,698,000'
+    },{
+        date: '09 Sep 2018',
+        type: 'Topup',
+        detail: 'Phone number: 0987654321',
+        deposit: '',
+        withdrawal: '100,000',
+        balance: '1,598,000'
+    },{
+        date: '30 Sep 2018',
+        type: 'Topup',
+        detail: 'Phone number: 0987654321',
+        deposit: '',
+        withdrawal: '200,000',
+        balance: '12,864,000'
+    },{
+        date: '27 Sep 2018',
+        type: 'Money Transfer',
+        detail: 'Account  200014849357805',
+        withdrawal: '168,000',
+        balance: '12,696,000'
+    },{
+        date: '25 Sep 2018',
+        type: 'POS',
+        detail: 'Parkson CT Plaza 1294',
+        deposit: '',
+        withdrawal: '499,000',
+        balance: '12,197,000'
+    },{
+        date: '10 Sep 2018',
+        type: 'Cash Deposit',
+        detail: 'CN Tan Son Nhat',
+        deposit:'10,000,000',
+        withdrawal: '',
+        balance: '11,698,000'
+    },{
+        date: '09 Sep 2018',
+        type: 'Topup',
+        detail: 'Phone number: 0987654321',
+        deposit: '',
+        withdrawal: '100,000',
+        balance: '1,598,000'
     },
 ]
 
