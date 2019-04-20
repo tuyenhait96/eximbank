@@ -4,7 +4,7 @@ import { Route, Switch, Redirect} from 'react-router-dom';
 
 //Component
 import Home from './Home';
-import Chat from './Chat';
+import Chat from './Chat/Chat';
 
 const BounceStyle = styled.div `
     .nav {
