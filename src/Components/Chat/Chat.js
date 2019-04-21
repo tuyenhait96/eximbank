@@ -5,12 +5,13 @@ import NavMenu from '../NavMenu';
 import Bottom from '../Bottom';
 import SortAddNews from './Left/SortAddNews';
 import Message from './Left/Message';
-import MessageChat from './Middle/MessageChat';
+import MessageChat from './Center/MessageChat';
 //Data
 import dataChat from '../../data/dataChat';
 
 const BounceStyle = styled.div`
     min-width: 100%;
+    user-select: none;
     .bottom {
         background-image: linear-gradient(121deg, #00a1e4, #005d98);
     }
@@ -44,7 +45,7 @@ const BounceStyle = styled.div`
 
             }
         }
-        .middle{
+        .center{
             width: 560px;
             background: aliceblue;
         }
@@ -62,6 +63,7 @@ class Money extends Component {
         }
     }
     selectUser(user){
+        console.log('user', user)
         this.setState({
             userSelected:user
         })
@@ -85,7 +87,7 @@ class Money extends Component {
                             userSelected={this.state.userSelected.name} 
                         /> 
                     </div>
-                    <div className = 'middle'>
+                    <div className = 'center'>
                         {/* receive data tu Message */}
                         <MessageChat userSelected={this.state.userSelected}/>
                     </div>

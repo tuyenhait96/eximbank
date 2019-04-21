@@ -3,7 +3,6 @@ import styled from 'styled-components';
 //Data
 
 const BounceStyled = styled.div`
-    ${'' /* background-image: linear-gradient(76deg, #f98153, #f45112); */}
     display: flex;
     border-radius: 5px;
     padding: 19px 15px 15px 15px;
@@ -17,7 +16,7 @@ const BounceStyled = styled.div`
             height: 16px;
             border-radius: 50%;
             position: absolute;
-            ${'' /* border: 4px solid #f98153 ; */}
+            ${'' /* border: 4px solid #ffffff; */}
         }
         img{
             width: 46px;
@@ -63,6 +62,7 @@ class Message extends Component {
     }
     
     onShowMessage(user) {
+        console.log('userMessage', this.props.selectUser())
         this.props.selectUser(user)
     }
     componentWillReceiveProps(nextProps){
@@ -77,8 +77,9 @@ class Message extends Component {
                 <BounceStyled onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
                     <div className = 'image' key = {i} dataMessage ={item}>
                         <div className = 'circle-active' 
-                            style = {{backgroundColor: this.state.userSelected === item.name ? '#34d859' : '#d0d4da',
-                            border: this.state.userSelected === item.name ? '4px solid #f98153' : '4px solid #ffffff' }}>
+                            // style = {{backgroundColor: this.state.userSelected === item.name ? '#34d859' : '#d0d4da'}}>
+                            style = {{ backgroundColor: item.isActive === true ? '#34d859' : '#d0d4da',
+                            border: this.state.userSelected === item.name ? '4px solid #f98153' : '4px solid #ffffff'}}>
                         </div>
                         <img src = {item.image} alt = {item.name} />
                     </div>
@@ -86,7 +87,7 @@ class Message extends Component {
                         <h1 style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#001654'}}>{item.name}</h1>
                         <p style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#181c2f'}}>{item.content}</p>
                     </div>
-                    <p className = 'time' style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#001654'}} >{item.time}</p>
+                    <p className = 'time' style = {{color: this.state.userSelected=== item.name ? '#ffffff' : '#001654'}} >{item.time}</p>
                 </BounceStyled>
             )
         })
