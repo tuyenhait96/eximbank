@@ -75,6 +75,8 @@ class MessageChat extends Component {
             userSelected:this.props.userSelected
         }
     }
+
+    // tu dong lay data moi khi refresh
     componentWillReceiveProps(nextProps){
         if(nextProps){
             console.log(nextProps.userSelected)
@@ -100,11 +102,10 @@ class MessageChat extends Component {
                         <div className = 'detail'>
                             <p>{this.state.userSelected.username}</p>
                             <div className = 'circle'></div>
-                            <p className = 'time'>Last seen 3 hours ago</p>
+                            <p className = 'time'>{this.state.userSelected.timeActive}</p>
                         </div>
 
                         <img src = 'image/ic-more.png' alt='' />
-                        {/* <img src = 'image/1.png' alt='' /> */}
                     </div>
                     
                 </div>

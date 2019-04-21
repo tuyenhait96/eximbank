@@ -24,11 +24,10 @@ class MenuAside extends Component {
             <li onClick = {this.onClickMainMenu.bind(this)}
                     style ={{borderRight: this.state.pathActive==='/' + this.props.data.key ? '6px solid #f9890c' : ''}}>
                 <Link to= {'/' + this.props.data.key}>
-                <div 
-                    >
+                    <div>
                         <i className="fa fa-home" />
                         <span>{this.props.data.title}</span>
-                </div>
+                    </div>
                 </Link>
             </li>
         );

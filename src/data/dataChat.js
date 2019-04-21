@@ -6,13 +6,13 @@ import image05 from '../image/5.png';
 
 const dataChat = [
     {
-        isShow: true,
         isActive: true,
         image: image01,
         name: 'Lucy Nguyen',
         content: 'Wait for 1 minute',
         time: '3mins',
         username: '@lucynguyen',
+        timeActive: 'Last seen 3 hours ago',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -32,13 +32,13 @@ const dataChat = [
         ]
     },
     {
-        isShow: false,
         isActive: true,
         image: image02,
         name: 'Thẩm Thị Kiều Oanh',
         content: 'Thank you for dinner last night',
         time: '1 hr',
         username: '@thamoanh',
+        timeActive: 'Last seen 8 hours ago',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -58,13 +58,13 @@ const dataChat = [
         ]
     },
     {
-        isShow: false,
         isActive: false,
         image: image03,
         name: 'Andre Roberts',
         content: 'Ok',
         time: '3hrs',
         username: '@andre',
+        timeActive: 'Active',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -86,13 +86,13 @@ const dataChat = [
         ]
     },
     {
-        isShow: false,
         isActive: false,
         image: image04,
         name: 'Hoàng Thuỳ Dương',
         content: 'I like that',
         time: 'yesterday',
         username: '@thuyduong',
+        timeActive: 'Last seen 1 hours ago',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -112,13 +112,13 @@ const dataChat = [
         ]
     },
     {
-        isShow: false,
         isActive: false,
         image: image05,
         name: 'Lê Quốc Khang',
         content: 'Yes',
         time: 'Sunday',
         username: '@quockhang',
+        timeActive: 'Last seen days ago',
         listChat : [
             {
                 timeCreate:'11:20',

@@ -16,9 +16,8 @@ const BounceStyled = styled.div`
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            ${'' /* background-color: #34d859; */}
             position: absolute;
-            border: 4px solid #f98153 ;
+            ${'' /* border: 4px solid #f98153 ; */}
         }
         img{
             width: 46px;
@@ -34,7 +33,6 @@ const BounceStyled = styled.div`
             font-size: 16px;
             font-weight: 500;
             line-height: 1.38;
-            ${'' /* color: #ffffff; */}
             margin: 0;
         }
         p{
@@ -60,31 +58,35 @@ class Message extends Component {
         super(props);
         this.state = {
             data: this.props.dataChat,
-            isShow: false
+            userSelected : this.props.userSelected
         }
     }
     
     onShowMessage(user) {
-        // this.setState({
-        //     isShow: true
-        // });
         this.props.selectUser(user)
     }
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            userSelected:nextProps.userSelected
+        })
+    }
+
     renderChat() {
         return this.state.data.map((item, i) => {
             return(
-                <BounceStyled onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: item.isShow === true ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
+                <BounceStyled onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
                     <div className = 'image' key = {i} dataMessage ={item}>
                         <div className = 'circle-active' 
-                            style = {{backgroundColor: item.isActive === true ? '#34d859' : '#d0d4da' }}>
+                            style = {{backgroundColor: this.state.userSelected === item.name ? '#34d859' : '#d0d4da',
+                            border: this.state.userSelected === item.name ? '4px solid #f98153' : '4px solid #ffffff' }}>
                         </div>
-                        <img src = {item.image} alt = '' />
+                        <img src = {item.image} alt = {item.name} />
                     </div>
                     <div className = 'content'>
-                        <h1 style = {{color: item.iShow === true ? '#ffffff' : '#001654'}}>{item.name}</h1>
-                        <p style = {{color: item.iShow === true ? '#ffffff' : '#181c2f'}}>{item.content}</p>
+                        <h1 style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#001654'}}>{item.name}</h1>
+                        <p style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#181c2f'}}>{item.content}</p>
                     </div>
-                    <p className = 'time' style = {{color: item.iShow === true ? '#ffffff' : '#001654'}} >{item.time}</p>
+                    <p className = 'time' style = {{color: this.state.userSelected === item.name ? '#ffffff' : '#001654'}} >{item.time}</p>
                 </BounceStyled>
             )
         })

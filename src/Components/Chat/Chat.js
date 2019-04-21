@@ -79,11 +79,14 @@ class Money extends Component {
                         {/* Sort Add News */}
                         <SortAddNews/>
                         {/* Message */}
+                        {/* get data tu con ra cha */}
                         <Message selectUser={this.selectUser.bind(this)}
                             dataChat={dataChat}
+                            userSelected={this.state.userSelected.name} 
                         /> 
                     </div>
                     <div className = 'middle'>
+                        {/* receive data tu Message */}
                         <MessageChat userSelected={this.state.userSelected}/>
                     </div>
                     <div className = 'right'>
