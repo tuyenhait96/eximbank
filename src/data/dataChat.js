@@ -15,17 +15,17 @@ const dataChat = [
         timeActive: 'Last seen 3 hours ago',
         listChat : [
             {
-                timeCreate:'11:20',
+                timeCreate:'11:20 PM',
+                text:'Oh, hello! All perfectly.I work, study and know this wonderful world!',
+                type:1
+            },
+            {
+                timeCreate:'11:20 PM',
                 text:'hello',
                 type:1
             },
             {
-                timeCreate:'11:20',
-                text:'hello',
-                type:1
-            },
-            {
-                timeCreate:'11:20',
+                timeCreate:'11:20 PM',
                 text:'hello',
                 type:1
             }
@@ -41,17 +41,17 @@ const dataChat = [
         timeActive: 'Last seen 8 hours ago',
         listChat : [
             {
-                timeCreate:'11:20',
+                timeCreate:'11:20 PM',
                 text:'hello',
                 type:1
             },
             {
-                timeCreate:'11:20',
+                timeCreate:'11:20 PM',
                 text:'hello',
                 type:1
             },
             {
-                timeCreate:'11:20',
+                timeCreate:'11:20 PM',
                 text:'hello',
                 type:1
             }
@@ -67,21 +67,21 @@ const dataChat = [
         timeActive: 'Active',
         listChat : [
             {
-                timeCreate:'11:20',
                 text:'hello',
-                type:1
+                timeCreate:'11:20',
+                type:1,
             },
             {
                 timeCreate:'11:20',
                 text:'hello',
-                type:1
+                type:1,
                 // 1: text
                 // 2: video
             },
             {
                 timeCreate:'11:20',
                 text:'hello',
-                type:1
+                type:1,
             }
         ]
     },
@@ -96,18 +96,18 @@ const dataChat = [
         listChat : [
             {
                 timeCreate:'11:20',
-                text:'hello',
-                type:1
+                text:'helloa',
+                type:1,
             },
             {
                 timeCreate:'11:20',
-                text:'hello',
-                type:1
+                text:'hellos',
+                type:1,
             },
             {
                 timeCreate:'11:20',
-                text:'hello',
-                type:1
+                text:'helloq',
+                type:1,
             }
         ]
     },
@@ -123,17 +123,17 @@ const dataChat = [
             {
                 timeCreate:'11:20',
                 text:'hello',
-                type:1
+                type:1,
             },
             {
                 timeCreate:'11:20',
                 text:'hello',
-                type:1
+                type:1,
             },
             {
                 timeCreate:'11:20',
                 text:'hello',
-                type:1
+                type:1,
             }
         ]
     }

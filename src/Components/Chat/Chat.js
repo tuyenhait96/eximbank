@@ -12,11 +12,16 @@ import dataChat from '../../data/dataChat';
 const BounceStyle = styled.div`
     min-width: 100%;
     user-select: none;
+    position: relative;
     .bottom {
         background-image: linear-gradient(121deg, #00a1e4, #005d98);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
     .chat {
         display: flex;
+        height: 100%;
         .left{
             width: 360px;
             padding: 17px 20px 0 20px;
@@ -46,8 +51,9 @@ const BounceStyle = styled.div`
             }
         }
         .center{
-            width: 560px;
-            background: aliceblue;
+            flex-grow: 2;
+            position: relative;
+            box-shadow: inset 0.5px 0 0 0 #d0d4da;
         }
         .right{
             width: 260px;
@@ -59,7 +65,8 @@ class Money extends Component {
     constructor(props){
         super(props)
         this.state={
-            userSelected:dataChat[0]
+            userSelected:dataChat[0],
+            messages: []
         }
     }
     selectUser(user){
@@ -67,6 +74,24 @@ class Money extends Component {
         this.setState({
             userSelected:user
         })
+    }
+
+    // data la du lieu Message Chat day ra
+    onSubmit(data) {
+        console.log('data', data)
+        // let { message } = this.state
+        // let  message  = this.state.message
+        let newMessage={
+            timeCreate:'11:20 PM',
+            text:data,
+            type:1
+        }
+        let userSelected = this.state.userSelected;
+        userSelected.listChat.push(newMessage)
+        // message.push(data)
+        this.setState({
+            userSelected
+        }); 
     }
     render() {
         return (
@@ -89,7 +114,10 @@ class Money extends Component {
                     </div>
                     <div className = 'center'>
                         {/* receive data tu Message */}
-                        <MessageChat userSelected={this.state.userSelected}/>
+                        <MessageChat 
+                            dataChat={dataChat}
+                            onSubmit = {this.onSubmit.bind(this)}
+                            userSelected={this.state.userSelected}/>
                     </div>
                     <div className = 'right'>
                         <h1>DRAG MONEY TO SEND</h1>

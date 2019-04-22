@@ -8,7 +8,7 @@ const BounceStyled = styled.div`
         display: flex;
         box-shadow: inset 0 -0.5px 0 0 #d0d4da;
         background-color: rgba(255, 255, 255, 0.9);
-        position: fixed;
+        ${'' /* position: fixed; */}
         min-width: 560px;
         height: 90px;
         .circle-active{
@@ -64,21 +64,134 @@ const BounceStyled = styled.div`
         }
     }
     .center{
-        background: blue;
-        height: 20px
+        padding: 0 40px;
+        height: 559px;
+        overflow: auto;
+        .text-chat{
+            width: fit-content;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+            background-color: #008bcc;
+            float: right;
+            clear: both;
+            p{
+                padding: 12px 31px 15px 33px;
+                font-family: RobotoLight;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1.29;
+                color: #ffffff;
+            }
+        }
+        .detail-chat{
+            height: 77px;
+            float: right;
+            clear: both;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            span {
+                opacity: 0.5;
+                font-family: RobotoLight;
+                font-size: 10px;
+                font-weight: 300;
+                line-height: 1.2;
+                color: #001654;
+                padding-top: 6px;
+            }
+        }
     }
-    .bottom {
-        background: green;
-        height: 20px
+    .chat-message {
+        width: 100%;
+        background: #ffffff !important;
+        padding: 12px 21px 12px 39px;
+        box-shadow: 0 -8px 30px 0 rgba(0, 0, 0, 0.05);
+        padding: 12px 21px 12px 39px; 
+        position: absolute;
+        bottom: 148px;
+        i {
+            transform: rotateX(180deg);
+            position: absolute;
+            top: 26px;
+            left: 59px;
+            color: #181c2f;
+            opacity: 0.3;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        i:nth-child(3){
+            top: 26px;
+            right: 94px;
+            text-align: right;
+            transform: rotateX(0);
+        }
+        input[type='text'] {
+            width: 100%;
+            height: 48px;
+            border-radius: 24px;
+            background-color: #eff1f5;
+            border: none;
+            outline: none; 
+            padding: 14px 73px 14px 40px;
+            text-indent: 20px;
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                opacity: 0.3;
+                font-family: RobotoLight;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.38;
+                color: #181c2f;
+                text-indent: 20px;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                opacity: 0.3;
+                font-family: RobotoLight;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.38;
+                color: #181c2f;
+                text-indent: 20px;
+            }
+            ::-ms-input-placeholder { /* Microsoft Edge */
+                opacity: 0.3;
+                font-family: RobotoLight;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.38;
+                color: #181c2f;
+                text-indent: 20px;
+            }
+        }
+        .send{
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-image: linear-gradient(28deg, #f98153, #f45112);
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            color: #ffffff !important;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+            i {
+                position: initial !important;
+                color: #ffffff ;
+                opacity: 1;
+                transform: rotateX(0) !important;
+            }
+        }
     }
 `
 
 class MessageChat extends Component {
-
     constructor(props){
         super(props)
         this.state={
-            userSelected:this.props.userSelected
+            userSelected:this.props.userSelected,
+            // data: this.props.dataChat,
+            txtChat: '',
         }
     }
 
@@ -91,6 +204,50 @@ class MessageChat extends Component {
             })
         }
     }
+
+    onHandleChange(e) {
+        let name = e.target.name
+        let value = e.target.value
+        console.log('name', e.target.value)
+        this.setState({
+            [name]: value
+        });
+    }
+    onKeyUpHandle(e){
+        console.log(e)
+        if(e.keyCode===13){
+            this.onSendMessage()
+        }
+    }
+
+    onSendMessage(){
+        this.onSubmit()
+        this.onClear()
+    }
+
+    onSubmit() {
+        
+        console.log('submit')
+        this.props.onSubmit(this.state.txtChat)
+    }
+
+    onClear() {
+        console.log('clear')
+        this.setState({ txtChat: ''});
+    }
+    renderListChat(){
+        return this.state.userSelected.listChat.map((item) => {
+            return (
+                <div className = 'detail-chat'>
+                    <div className= 'text-chat'>
+                        <p>{item.text}</p>
+                    </div>
+                    <span>{item.timeCreate}</span>
+                </div>
+            )
+        })
+    }
+
     render() {
         return (
             <BounceStyled>
@@ -111,8 +268,23 @@ class MessageChat extends Component {
                     </div>
                     
                 </div>
-                <div className = 'center'></div>
-                <div className = 'bottom'></div>
+                    {/* Chat Message */}
+                <div className = 'center'>
+                    {this.renderListChat()}
+                </div>
+                <div className = 'chat-message'>
+                    <i className = 'fa fa-paperclip'></i>
+                    <input type = 'text' placeholder = 'Type something...' 
+                        onChange = {this.onHandleChange.bind(this)}
+                        onKeyUp={this.onKeyUpHandle.bind(this)}
+                        value = {this.state.txtChat}
+                        name = 'txtChat'
+                    />
+                    <i className ='fa fa-smile-o'></i>
+                    <div className = 'send' onClick = {this.onSendMessage.bind(this)}>
+                        <i className = 'fa  fa-paper-plane'></i>
+                    </div>
+                </div>
             </BounceStyled>
         );
     }

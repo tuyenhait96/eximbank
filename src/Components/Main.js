@@ -7,6 +7,7 @@ import Home from './Home';
 import Chat from './Chat/Chat';
 
 const BounceStyle = styled.div `
+    width: 100%;
     .nav {
         background-image: linear-gradient(121deg, #00a1e4, #005d98);
         min-width: 1180px;

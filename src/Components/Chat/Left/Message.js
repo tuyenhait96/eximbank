@@ -96,7 +96,6 @@ class Message extends Component {
         return (
             <div className = 'mt-15'>
                 {this.renderChat()}
-           
             </div>
         );
     }

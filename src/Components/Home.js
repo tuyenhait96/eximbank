@@ -16,76 +16,77 @@ import { cardWater } from '../data/dataCard';
 import NavMenu from './NavMenu';
 
 const BounceStyle = styled.div`
-        background-image: linear-gradient(121deg,#00a1e4,#005d98);
+    background-image: linear-gradient(121deg,#00a1e4,#005d98);
+    user-select: none;
+    .main-top{
+        display: flex;
+    }
+    .main-left{
         user-select: none;
-        .main-top{
-            display: flex;
-        }
-        .main-left{
-            user-select: none;
-            .image {
-                img{
-                    width: 726px;
-                    height: 170px;
-                    margin-top: 20px;
-                    border-radius: 5px;
-                    object-fit: cover;
-                }
-            }
-            .scroll {
+        .image {
+            img{
                 width: 726px;
-                overflow: hidden;
-                margin:20px 21px 0 0;
-                .group-plus {
-                    width: 90px;
-                    height: 90px;
-                    border-radius: 10px;
-                    background-color: #ffffff;
-                    line-height: 90px;
-                    text-align: center;
-                    margin-right: 20px;
-                }
-            }
-        }
-        .main-right {
-            flex: 1;
-            height: auto;
-            padding: 40px 40px 21px 0;
-            user-select: none;
-            .card-water{
+                height: 170px;
+                margin-top: 20px;
                 border-radius: 5px;
-                background-image: linear-gradient(64deg, #00cfff, #005cec, #005bec);     
-                padding: 15px 0 15px 25px;
-                h3{
-                    text-transform: uppercase;
-                    font-family: RobotoMedium;
-                    font-size: 12px;
-                    font-weight: 500;
-                    color: #ffffff;
-                }
-                .date { 
-                    font-family: RobotoLight;
-                    font-size: 16px;
-                    font-weight: 300;
-                    color: #ffffff;
-                    padding-top:43px;
-                }
-                .money {
-                    font-family: LatoBold;
-                    font-size: 28px;
-                    font-weight: bold;
-                    color: #ffffff;
-                }
-                .type{
-                    font-family: RobotoLightItalic;
-                    font-size: 16px;
-                    font-weight: 300;
-                    font-style: italic;
-                    color: #ffffff;
-                    padding-top: 8px;
-                }
+                object-fit: cover;
             }
         }
+        .scroll {
+            width: 726px;
+            overflow: hidden;
+            margin:20px 21px 0 0;
+            .group-plus {
+                width: 90px;
+                height: 90px;
+                border-radius: 10px;
+                background-color: #ffffff;
+                line-height: 90px;
+                text-align: center;
+                margin-right: 20px;
+            }
+        }
+    }
+    .main-right {
+        flex: 1;
+        height: auto;
+        padding: 40px 40px 21px 0;
+        user-select: none;
+        .card-water{
+            border-radius: 5px;
+            background-image: linear-gradient(64deg, #00cfff, #005cec, #005bec);     
+            padding: 15px 0 15px 25px;
+            h3{
+                text-transform: uppercase;
+                font-family: RobotoMedium;
+                font-size: 12px;
+                font-weight: 500;
+                color: #ffffff;
+            }
+            .date { 
+                font-family: RobotoLight;
+                font-size: 16px;
+                font-weight: 300;
+                color: #ffffff;
+                padding-top:43px;
+            }
+            .money {
+                font-family: LatoBold;
+                font-size: 28px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            .type{
+                font-family: RobotoLightItalic;
+                font-size: 16px;
+                font-weight: 300;
+                font-style: italic;
+                color: #ffffff;
+                padding-top: 8px;
+            }
+        }
+    }
+}
 `
 
 class Home extends Component {
