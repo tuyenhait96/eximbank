@@ -13,6 +13,7 @@ const dataChat = [
         time: '3mins',
         username: '@lucynguyen',
         timeActive: 'Last seen 3 hours ago',
+        accId: '200014849357805',
         listChat : [
             {
                 timeCreate:'11:20 PM',
@@ -39,6 +40,7 @@ const dataChat = [
         time: '1 hr',
         username: '@thamoanh',
         timeActive: 'Last seen 8 hours ago',
+        accId: '403014849357805',
         listChat : [
             {
                 timeCreate:'11:20 PM',
@@ -65,6 +67,7 @@ const dataChat = [
         time: '3hrs',
         username: '@andre',
         timeActive: 'Active',
+        accId: '220454829387805',
         listChat : [
             {
                 text:'hello',
@@ -93,6 +96,7 @@ const dataChat = [
         time: 'yesterday',
         username: '@thuyduong',
         timeActive: 'Last seen 1 hours ago',
+        accId: '880024819357805',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -119,6 +123,7 @@ const dataChat = [
         time: 'Sunday',
         username: '@quockhang',
         timeActive: 'Last seen days ago',
+        accId: '440214249357805',
         listChat : [
             {
                 timeCreate:'11:20',
@@ -136,6 +141,16 @@ const dataChat = [
                 type:1,
             }
         ]
+    },
+]
+export default dataChat;
+export const mediaTransaction = [
+    {
+        type: 'Media(31)',
+        see: 'See all '
+    },
+    {
+        type: 'Last transaction',
+        see: 'See all'
     }
 ]
-export default dataChat

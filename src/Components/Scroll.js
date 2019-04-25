@@ -26,7 +26,6 @@ class Scroll extends Component {
                     <GroupInfo data = {dataInfo}/>
                 </BounceStyled>
             );
-        // })
         
     }
 }

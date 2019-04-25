@@ -166,6 +166,7 @@ html{
     border-radius: 10px;
 }
 
+
 .active {
     background: rebeccapurple;
 }
@@ -175,4 +176,12 @@ html{
 }
 .mt-15{
     margin-top: 15px;
+    height: 589px;
+    overflow: auto;
+}
+.mt-15::-webkit-scrollbar {
+    width: 0;
+}
+.mt-15::-webkit-scrollbar-track {
+    background: none;
 }

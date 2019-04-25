@@ -40,3 +40,7 @@ code {
   font-family: 'LatoBold';
   src: url('./font/Lato-Bold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'LatoLight';
+  src: url('./font/Lato-Light.ttf') format('truetype');
+}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ic_more from '../../../image/ic-more.png'
+
+const scroll = document.querySelector('#scroll')
+const anchor = document.querySelector('#anchor')
+
 const BounceStyled = styled.div`
     .top{
         position: relative;
@@ -67,6 +71,12 @@ const BounceStyled = styled.div`
         padding: 0 40px;
         height: 559px;
         overflow: auto;
+        ::-webkit-scrollbar-track {
+            background:none;
+        }
+        ::-webkit-scrollbar {
+            width: 0;
+        }
         .text-chat{
             width: fit-content;
             border-radius: 10px;
@@ -109,7 +119,7 @@ const BounceStyled = styled.div`
         padding: 12px 21px 12px 39px; 
         position: absolute;
         bottom: 148px;
-        i {
+        i.fa-paperclip {
             transform: rotateX(180deg);
             position: absolute;
             top: 26px;
@@ -119,12 +129,7 @@ const BounceStyled = styled.div`
             font-size: 22px;
             cursor: pointer;
         }
-        i:nth-child(3){
-            top: 26px;
-            right: 94px;
-            text-align: right;
-            transform: rotateX(0);
-        }
+        
         input[type='text'] {
             width: 100%;
             height: 48px;
@@ -132,7 +137,7 @@ const BounceStyled = styled.div`
             background-color: #eff1f5;
             border: none;
             outline: none; 
-            padding: 14px 73px 14px 40px;
+            padding: 14px 92px 14px 40px;
             text-indent: 20px;
             ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
                 opacity: 0.3;
@@ -182,6 +187,17 @@ const BounceStyled = styled.div`
                 transform: rotateX(0) !important;
             }
         }
+        .group-smile{
+            position: absolute;
+            top: 27px;
+            right: 94px;
+            cursor: pointer;
+            i{
+                font-size: 20px;
+                opacity: 0.3;
+                color: #292f4c;
+            }
+        }
     }
 `
 
@@ -195,6 +211,20 @@ class MessageChat extends Component {
         }
     }
 
+    onWheelHandle(e) {
+        console.log('deltaY', e.deltaY)
+        console.log('scrollTop', e.currentTarget.scrollTop)
+        console.log('scrollHeight', e.currentTarget.scrollHeight)
+        console.log('clientHeight', e.currentTarget.scrollHeight - e.currentTarget.clientHeight)
+        let a = document.getElementById('detail-chat')
+        let b = document.getElementById('detail')
+        if(e.currentTarget.scrollHeight > 559) {
+            // a.style.backgroundColor = 'red'
+            // console.log(a)
+            e.currentTarget.scrollTop = e.currentTarget.scrollHeight;
+
+        }
+    }
     // tu dong lay data moi khi refresh
     componentWillReceiveProps(nextProps){
         if(nextProps){
@@ -236,9 +266,9 @@ class MessageChat extends Component {
         this.setState({ txtChat: ''});
     }
     renderListChat(){
-        return this.state.userSelected.listChat.map((item) => {
+        return this.state.userSelected.listChat.map((item, i) => {
             return (
-                <div className = 'detail-chat'>
+                <div className = 'detail-chat' id = 'anchor' key ={i}>
                     <div className= 'text-chat'>
                         <p>{item.text}</p>
                     </div>
@@ -248,6 +278,12 @@ class MessageChat extends Component {
         })
     }
 
+    appendChild() {
+        let msg = document.createElement('div')
+        msg.className = 'message'
+        msg.innerText = this.state.userSelected.listChat.text
+        scroll.insertBefore(msg, anchor);
+    }
     render() {
         return (
             <BounceStyled>
@@ -269,7 +305,7 @@ class MessageChat extends Component {
                     
                 </div>
                     {/* Chat Message */}
-                <div className = 'center'>
+                <div className = 'center' onWheel = {this.onWheelHandle.bind(this)}  id= 'scroll'>
                     {this.renderListChat()}
                 </div>
                 <div className = 'chat-message'>
@@ -280,7 +316,7 @@ class MessageChat extends Component {
                         value = {this.state.txtChat}
                         name = 'txtChat'
                     />
-                    <i className ='fa fa-smile-o'></i>
+                    <div className= 'group-smile'><i className ='fa fa-smile-o'></i></div>
                     <div className = 'send' onClick = {this.onSendMessage.bind(this)}>
                         <i className = 'fa  fa-paper-plane'></i>
                     </div>

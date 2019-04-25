@@ -9,6 +9,7 @@ const BounceStyled = styled.div`
     margin-bottom: 15px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
     cursor: pointer;
+
     .image{
         position: relative;
         .circle-active{
@@ -74,8 +75,8 @@ class Message extends Component {
     renderChat() {
         return this.state.data.map((item, i) => {
             return(
-                <BounceStyled onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
-                    <div className = 'image' key = {i} dataMessage ={item}>
+                <BounceStyled key = {i} onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
+                    <div className = 'image' dataMessage ={item}>
                         <div className = 'circle-active' 
                             // style = {{backgroundColor: this.state.userSelected === item.name ? '#34d859' : '#d0d4da'}}>
                             style = {{ backgroundColor: item.isActive === true ? '#34d859' : '#d0d4da',

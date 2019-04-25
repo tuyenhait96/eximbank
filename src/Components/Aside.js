@@ -29,7 +29,7 @@ class Aside extends Component {
         return this.state.data.map((data, i ) => {
             if(i===2){
                 return(
-                    <li id="message">
+                    <li id="message" key = {i}>
                         <Link to='/'>
                             <span>Send or Request Money with</span>
                             <img src="image/group-12.png" alt="logo-wee" />
@@ -39,6 +39,7 @@ class Aside extends Component {
             }
             else{
                 return <MenuAside 
+                    key ={i}
                     data = {data} 
                     index = {i} 
                     onClickMainMenu = {this.onClickMainMenu.bind(this)}

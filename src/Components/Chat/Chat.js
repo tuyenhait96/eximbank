@@ -8,16 +8,21 @@ import Message from './Left/Message';
 import MessageChat from './Center/MessageChat';
 //Data
 import dataChat from '../../data/dataChat';
+import DragMoney from './Right/DragMoney';
+import dataInfo from '../../data/dataInfo';
 
 const BounceStyle = styled.div`
     min-width: 100%;
     user-select: none;
     position: relative;
-    .bottom {
-        background-image: linear-gradient(121deg, #00a1e4, #005d98);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+    .h-bottom{
+        height: 88px;
+        .bottom {
+            background-image: linear-gradient(121deg, #00a1e4, #005d98);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
     }
     .chat {
         display: flex;
@@ -51,13 +56,13 @@ const BounceStyle = styled.div`
             }
         }
         .center{
-            flex-grow: 2;
+            ${'' /* flex-grow: 2; */}
+            width: 100%;
             position: relative;
             box-shadow: inset 0.5px 0 0 0 #d0d4da;
         }
         .right{
             width: 260px;
-            background: chartreuse
         }
     }
 `
@@ -66,7 +71,6 @@ class Money extends Component {
         super(props)
         this.state={
             userSelected:dataChat[0],
-            messages: []
         }
     }
     selectUser(user){
@@ -79,8 +83,6 @@ class Money extends Component {
     // data la du lieu Message Chat day ra
     onSubmit(data) {
         console.log('data', data)
-        // let { message } = this.state
-        // let  message  = this.state.message
         let newMessage={
             timeCreate:'11:20 PM',
             text:data,
@@ -88,7 +90,6 @@ class Money extends Component {
         }
         let userSelected = this.state.userSelected;
         userSelected.listChat.push(newMessage)
-        // message.push(data)
         this.setState({
             userSelected
         }); 
@@ -112,23 +113,35 @@ class Money extends Component {
                             userSelected={this.state.userSelected.name} 
                         /> 
                     </div>
+                    {/* <div className = 'right'>
+                        <DragMoney
+                            dataName = {dataInfo}
+                            title= 'DRAG MONEY TO SEND' placeholder = 'Search wee-name'
+                            userSelected = {this.state.userSelected}
+                        />
+                    </div> */}
                     <div className = 'center'>
                         {/* receive data tu Message */}
                         <MessageChat 
-                            dataChat={dataChat}
                             onSubmit = {this.onSubmit.bind(this)}
                             userSelected={this.state.userSelected}/>
                     </div>
                     <div className = 'right'>
-                        <h1>DRAG MONEY TO SEND</h1>
+                        <DragMoney
+                            dataName = {dataInfo}
+                            title= 'DRAG MONEY TO SEND' placeholder = 'Search wee-name'
+                            userSelected = {this.state.userSelected}
+                        />
                     </div>
                 </div>
-                <div className='bottom'>
-                    <Bottom title='VIETNAM EXPORT IMPORT BANK'
-                        street='8th Floor - Vincom Center, 72 Le Thanh Ton and 45A Ly Tu Trong Street, District 1, HCMC'
-                        mail='ebanking@eximbank.com.vn'
-                        phone='1800 1199'
-                    />
+                <div className = 'h-bottom'>
+                    <div className='bottom'>
+                        <Bottom title='VIETNAM EXPORT IMPORT BANK'
+                            street='8th Floor - Vincom Center, 72 Le Thanh Ton and 45A Ly Tu Trong Street, District 1, HCMC'
+                            mail='ebanking@eximbank.com.vn'
+                            phone='1800 1199'
+                        />
+                    </div>
                 </div>
             </BounceStyle>
 
