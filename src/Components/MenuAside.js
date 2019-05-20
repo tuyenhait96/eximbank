@@ -19,11 +19,14 @@ class MenuAside extends Component {
         console.log(nextProps.pathActive)
         this.setState({pathActive:nextProps.pathActive})
     }
+    show() {
+        console.log('a',this.state.pathActive)
+    }
     render() {
         return (
             <li onClick = {this.onClickMainMenu.bind(this)}
                     style ={{borderRight: this.state.pathActive==='/' + this.props.data.key ? '6px solid #f9890c' : ''}}>
-                <Link to= {'/' + this.props.data.key}>
+                <Link to= {'/' + this.props.data.key} onClick = {this.show.bind(this)}>
                     <div>
                         <i className="fa fa-home" />
                         <span>{this.props.data.title}</span>

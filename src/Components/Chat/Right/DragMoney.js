@@ -174,16 +174,16 @@ class DragMoney extends Component {
         console.log('deltaY', e.deltaY)
         console.log(e.currentTarget.scrollLeft)
         if (e.deltaY > 0) {
-            e.currentTarget.scrollLeft += 30
+            e.currentTarget.scrollLeft += 50 
         } else {
-            e.currentTarget.scrollLeft -= 30
+            e.currentTarget.scrollLeft -= 50
         }
     }
 
     renderName(){
         return this.props.dataName.map((item, i) => {
             return (
-                <div className = 'group-inform' key ={i} onWheel = {this.onHandleWheel.bind(this)}>
+                <div className = 'group-inform' key ={i} >
                     <img src = {item.icon} alt= ''/>
                     <p>{item.name}</p>
                 </div>
@@ -218,7 +218,7 @@ class DragMoney extends Component {
                             <input type = 'text' placeholder = {this.props.placeholder}/>
                         </div>
                         {/* Scrolll Search Name */}
-                        <div className = 'scroll'>
+                        <div className = 'scroll' onWheel = {this.onHandleWheel.bind(this)}>
                             {this.renderName()}
                         </div>
                     </div>

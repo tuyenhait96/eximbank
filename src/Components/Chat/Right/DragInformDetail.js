@@ -101,6 +101,7 @@ class DragInformDetail extends Component {
         }
     }
     componentWillReceiveProps(nextprops){
+        console.log('dragInformDetail',nextprops.userSelect)
         this.setState({
             userSelected: nextprops.userSelect
         })

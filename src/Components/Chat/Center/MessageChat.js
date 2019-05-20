@@ -205,8 +205,6 @@ class MessageChat extends Component {
     constructor(props){
         super(props)
         this.state={
-            userSelected:this.props.userSelected,
-            // data: this.props.dataChat,
             txtChat: '',
         }
     }
@@ -256,9 +254,10 @@ class MessageChat extends Component {
     }
 
     onSubmit() {
-        
         console.log('submit')
-        this.props.onSubmit(this.state.txtChat)
+        if(this.state.txtChat !== ''){
+            this.props.onSubmit(this.state.txtChat)
+        }
     }
 
     onClear() {
@@ -266,7 +265,7 @@ class MessageChat extends Component {
         this.setState({ txtChat: ''});
     }
     renderListChat(){
-        return this.state.userSelected.listChat.map((item, i) => {
+        return this.props.userSelected.listChat.map((item, i) => {
             return (
                 <div className = 'detail-chat' id = 'anchor' key ={i}>
                     <div className= 'text-chat'>
@@ -277,28 +276,21 @@ class MessageChat extends Component {
             )
         })
     }
-
-    appendChild() {
-        let msg = document.createElement('div')
-        msg.className = 'message'
-        msg.innerText = this.state.userSelected.listChat.text
-        scroll.insertBefore(msg, anchor);
-    }
     render() {
         return (
             <BounceStyled>
                 <div className = 'top'>
                      <div className = 'image'>
-                        <div className = 'circle-active' style = {{backgroundColor: this.state.userSelected.isActive === true ? '#34d859' : '#d0d4da'}}>
+                        <div className = 'circle-active' style = {{backgroundColor: this.props.userSelected.isActive === true ? '#34d859' : '#d0d4da'}}>
                         </div>
-                        <img src = {this.state.userSelected.image} alt= {this.state.userSelected.name} />
+                        <img src = {this.props.userSelected.image} alt= {this.props.userSelected.name} />
                     </div>
                     <div className = 'content'>
-                        <h1>{this.state.userSelected.name}</h1>
+                        <h1>{this.props.userSelected.name}</h1>
                         <div className = 'detail'>
-                            <p>{this.state.userSelected.username}</p>
+                            <p>{this.props.userSelected.username}</p>
                             <div className = 'circle'></div>
-                            <p className = 'time'>{this.state.userSelected.timeActive}</p>
+                            <p className = 'time'>{this.props.userSelected.timeActive}</p>
                         </div>
                         <img src = {ic_more} alt= 'ic-more' />
                     </div>
@@ -312,7 +304,7 @@ class MessageChat extends Component {
                     <i className = 'fa fa-paperclip'></i>
                     <input type = 'text' placeholder = 'Type something...' 
                         onChange = {this.onHandleChange.bind(this)}
-                        onKeyUp={this.onKeyUpHandle.bind(this)}
+                        onKeyDown={this.onKeyUpHandle.bind(this)}
                         value = {this.state.txtChat}
                         name = 'txtChat'
                     />

@@ -111,6 +111,8 @@ class Money extends Component {
                         <Message selectUser={this.selectUser.bind(this)}
                             dataChat={dataChat}
                             userSelected={this.state.userSelected.name} 
+                            dataUser = {this.props.dataUser}
+                            callbackUser = {this.props.callbackUser}
                         /> 
                     </div>
                     {/* <div className = 'right'>

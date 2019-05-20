@@ -67,15 +67,19 @@ class Message extends Component {
         this.props.selectUser(user)
     }
     componentWillReceiveProps(nextProps){
+        console.log('message', nextProps.userSelected)
         this.setState({
             userSelected:nextProps.userSelected
         })
     }
-
     renderChat() {
-        return this.state.data.map((item, i) => {
+        // return this.state.data.map((item, i) => {
+        return this.props.dataUser.map((item, i) => {
             return(
-                <BounceStyled key = {i} onClick = {this.onShowMessage.bind(this,item)} style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
+                <BounceStyled key = {i} 
+                onClick = {this.onShowMessage.bind(this,item)} 
+                // onClick = {this.props.callbackUser.bind(this, i)} 
+                style = {{backgroundImage: this.state.userSelected === item.name ? 'linear-gradient(76deg, #f98153, #f45112)' : '' }}>
                     <div className = 'image' dataMessage ={item}>
                         <div className = 'circle-active' 
                             // style = {{backgroundColor: this.state.userSelected === item.name ? '#34d859' : '#d0d4da'}}>

@@ -23,7 +23,7 @@ class Aside extends Component {
         }
     }
     show(){
-        console.log(this.state.mainActive)
+        console.log(this.state.pathActive)
     } 
     renderMenu() {
         return this.state.data.map((data, i ) => {

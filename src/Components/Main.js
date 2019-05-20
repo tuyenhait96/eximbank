@@ -39,7 +39,9 @@ class Main extends Component {
                     </Route>
                     <Route exact path = '/chat' render = {()=>
                         <div className='main-screen-container'>
-                            <Chat/>
+                            <Chat dataUser = {this.props.dataUser}
+                                callbackUser = {this.props.callbackUser}
+                            />
                         </div>
                     }>
                     </Route>
